@@ -13,6 +13,8 @@ git pull
 ################################################################################
 
 # Flash main MCU - BTT Otopus v1.1
+
+################################################################################
 make clean KCONFIG_CONFIG=klipper-bigtreetech-octopus.config
 make menuconfig KCONFIG_CONFIG=klipper-bigtreetech-octopus.config
 make -j4 KCONFIG_CONFIG=klipper-bigtreetech-octopus.config
@@ -30,9 +32,12 @@ echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
 echo -e -n '\e[0;0m'
 read
 
+
 ################################################################################
 
 # Flash secondary MCU - BTT EBB36 v1.2
+
+################################################################################
 make clean KCONFIG_CONFIG=klipper-btt-ebb36-v1.2.config
 make menuconfig KCONFIG_CONFIG=klipper-btt-ebb36-v1.2.config
 make -j 4 KCONFIG_CONFIG=klipper-btt-ebb36-v1.2.config
@@ -52,7 +57,32 @@ read
 
 ################################################################################
 
+# Flash secondary MCU - BTT MMB v1.1
+
+################################################################################
+make clean KCONFIG_CONFIG=klipper-btt-mmb-v1.1.config
+make menuconfig KCONFIG_CONFIG=klipper-btt-mmb-v1.1.config
+make -j 4 KCONFIG_CONFIG=klipper-btt-mmb-v1.1.config
+
+echo -e -n "\e[0;33mBTT MMB v1.1 MCU firmware flashed, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
+
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32g0b1xx_1F0013000A50304158373420-if00 KCONFIG_CONFIG=klipper-btt-mmb-v1.1.config
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_stm32g0b1xx_1F0013000A50304158373420-if00 KCONFIG_CONFIG=klipper-btt-mmb-v1.1.config
+
+echo -e -n "\e[0;33mBTT MMB v1.1 MCU firmware flashed, please check above for any errors. "
+echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
+echo -e -n '\e[0;0m'
+read
+
+
+################################################################################
+
 # Flash Host MCU - Raspberry Pi
+
+################################################################################
 make clean KCONFIG_CONFIG=klipper-raspberry-pi.config
 make menuconfig KCONFIG_CONFIG=klipper-raspberry-pi.config
 make -j 4 KCONFIG_CONFIG=klipper-raspberry-pi.config
