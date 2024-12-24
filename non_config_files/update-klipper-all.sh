@@ -47,8 +47,8 @@ echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
 echo -e -n '\e[0;0m'
 read
 
-# make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32g0b1xx_40004B001750425539393020-if00 KCONFIG_CONFIG=klipper-btt-ebb36-v1.2.config
-make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_stm32g0b1xx_260031001750425539393020-if00 KCONFIG_CONFIG=klipper-btt-ebb36-v1.2.config
+make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32g0b1xx_40004B001750425539393020-if00 KCONFIG_CONFIG=klipper-btt-ebb36-v1.2.config
+# make flash FLASH_DEVICE=/dev/serial/by-id/usb-katapult_stm32g0b1xx_260031001750425539393020-if00 KCONFIG_CONFIG=klipper-btt-ebb36-v1.2.config
 
 echo -e -n "\e[0;33mBTT EBB36 v1.2 MCU firmware flashed, please check above for any errors. "
 echo -e -n "\e[0;33mPress [Enter] to continue flashing, or [Ctrl+C] to abort"
