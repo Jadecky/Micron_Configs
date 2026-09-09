@@ -1,0 +1,8 @@
+ShakeTune_results/
+adxl_results/
+*.stdata
+snt_tmp-*
+*.log
+*.bkp
+__pycache__/
+*.pyc
